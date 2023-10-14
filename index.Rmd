@@ -25,7 +25,7 @@ Link text: https://www.dropbox.com/s/wqmnc9w2stvhlvj/violence-codebook.txt?dl=0
 
 ```{r}
 final <- read.csv("data/violence.csv")
-final
+
 ```
 So, in this csv file, I will compare the political violence in multiple South American countries by focusing on the corruption and how that affects the legitimacy of the country's political system. By doing this I will compare how well a country does economically and seeing whether there is a correlation is good economy (less corruption) or a bad economy (more corruption) 
 1.) Are people satisfied with what the government is doing or not fiscally?
