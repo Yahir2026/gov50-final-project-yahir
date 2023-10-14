@@ -9,6 +9,7 @@ output:
 
 
 
+
 ## Project thoughts
 
 I am interested in exploring data related to... American poverty or perhaps ideology
@@ -17,3 +18,19 @@ think about researching. I am interested in the way the economy has grown over t
 and how that has affected American lives all over America. I want to learn more about 
 how money has influenced Americans and perhaps their political lives. Hopefully
 I can find data relating both economics and politics which would be quite interesting.
+
+Link: https://www.dropbox.com/s/8zms0isy8epvzvd/violence.csv?dl=0
+
+Link text: https://www.dropbox.com/s/wqmnc9w2stvhlvj/violence-codebook.txt?dl=0 
+
+```{r}
+final <- read.csv("data/violence.csv")
+final
+```
+So, in this csv file, I will compare the political violence in multiple South American countries by focusing on the corruption and how that affects the legitimacy of the country's political system. By doing this I will compare how well a country does economically and seeing whether there is a correlation is good economy (less corruption) or a bad economy (more corruption) 
+1.) Are people satisfied with what the government is doing or not fiscally?
+2.) I hypothesize that the more money a country has, the more likely people are to corrupt it such a top offcials becoming more corrupt because of weak government rules
+3.) My explanatory variable is growth rate of government's GDP and how that affects riots through perhaps a 30 year time period (1960-1980)
+4.) My responding variable would be the effect it has on corruption, so corruption would responding variable and whether corruption increases or decreases
+5.) In order for it to work, the more money that government receives, the more we see high lvls of corruption and vice versa. Or else we can see that my hypothesis is wrong and that higher lvls of gdp correlates to an inverse relationship, but hopefully my hypothesis is correct and that because governments in Latin American have weaker checks and balances, it is easy for high official to use the money for personal use
+
