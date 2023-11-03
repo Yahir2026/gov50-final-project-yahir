@@ -87,7 +87,7 @@ This data approach student achievement in secondary education of two Portuguese 
 
 I am interested in finding out the trend between a student's performance in school based on the amount of alcohol they consume. I also want to compare the alcohol consumption to whether it is also impacted by family support in education and the strength of the family relationships or not that causes the student to consume more or less alcohol. 
 
-So, in this csv file, I will compare the alcohol consumption between both schools, Gabriel Pereira and Mousinho da Silveir among student age groups in Portugal. My question however is what is the cause for sudents to consume more alcohol than the average Portugal kid and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0).
+So, in this csv file, I will compare the alcohol consumption among student age groups in Portugal. My question however is what is the cause for sudents to consume more alcohol than the average Portugal kid and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0).
 
 I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued 
 
@@ -110,6 +110,7 @@ math <- read_csv("data/student-mat.csv")
 portugese
 math
 ```
+
 ##Avg Alcohol Consumption based on Treatment of Family Support or not
 ```{r}
 avgalcohol <- portugese |> 
@@ -148,8 +149,22 @@ For this part, I did a quick Simple Comparison of the difference between the mea
 
 
 
+##ggplot
 
 
+```{r}
+boxplotweekend <- portugese |>
+  ggplot(mapping = aes(x = famsup, y = Walc)) +
+  geom_boxplot()
+boxplotweekend
+```
+
+```{r}
+boxplotweekend2 <- portugese |>
+  ggplot(mapping = aes(x = famsup, y = Dalc)) +
+  geom_boxplot()
+boxplotweekend2
+```
 
 
 

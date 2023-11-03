@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/spotify_songs.csv","data/student-mat.csv","data/student-merge.R","data/student-por.csv","data/violence.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/spotify_songs.csv","data/student-mat.csv","data/student-merge.R","data/student-por.csv","data/violence.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1584,7 +1584,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>32 G3 - final grade (numeric: from 0 to 20, output target)</p>
 <h2 id="project-thoughts">Project thoughts</h2>
 <p>I am interested in finding out the trend between a student’s performance in school based on the amount of alcohol they consume. I also want to compare the alcohol consumption to whether it is also impacted by family support in education and the strength of the family relationships or not that causes the student to consume more or less alcohol.</p>
-<p>So, in this csv file, I will compare the alcohol consumption between both schools, Gabriel Pereira and Mousinho da Silveir among student age groups in Portugal. My question however is what is the cause for sudents to consume more alcohol than the average Portugal kid and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0).</p>
+<p>So, in this csv file, I will compare the alcohol consumption among student age groups in Portugal. My question however is what is the cause for sudents to consume more alcohol than the average Portugal kid and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0).</p>
 <p>I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued</p>
 <p>My explanatory variables is age of students based on age group as well as the consumption levels of alcohol per age group (age range 15-22 &amp; alcohol consumption range 1-5, low to high). This will then allow us to see a pattern among groups of students with the treatment being whether a student has educational support or not. I will also want to incorporate the strength of the relationship with family to help reinforce the validity of the findings to test my hypothesis (range 1-5, poor to strong relationship).</p>
 <p>My responding variable would be the effect it has on the students consumption of alcohol during the weekday as well as during the weekends. It will be measured by taking the mean of the consumption of alcohol of all students from a certain age group to find out the level of consumption. I will then find the ATE to confirm how much different the treated group is to the controlled group through a cross sectional design.</p>
@@ -1727,6 +1727,25 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </table>
 </div>
 <p>For this part, I did a quick Simple Comparison of the difference between the mean of the treatment minus the control. I already stated the difference up above but to further demonstrate the difference in groups, this is the concrete evidence.Again, a relationship can be seen that having no family support may lead to an individual to consume more alcohol.</p>
+<p>##ggplot</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>boxplotweekend</span> <span class='op'>&lt;-</span> <span class='va'>portugese</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>famsup</span>, y <span class='op'>=</span> <span class='va'>Walc</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='va'>boxplotweekend</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>boxplotweekend2</span> <span class='op'>&lt;-</span> <span class='va'>portugese</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>famsup</span>, y <span class='op'>=</span> <span class='va'>Dalc</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='va'>boxplotweekend2</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
