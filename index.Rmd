@@ -166,6 +166,59 @@ boxplotweekend2 <- portugese |>
 boxplotweekend2
 ```
 
+## Test
+```{r}
+pointplot <- portugese |>
+  ggplot(mapping = aes(x = famrel, y = Walc, color = famsup, fill = famsup)) +
+  geom_point() +
+  geom_smooth()
+pointplot
+```
+## Finalstone Project 4
+```{r}
+pointplot <- portugese |>
+  group_by(Walc, famsup) |>
+  summarize(count = n()) |>
+  mutate(Proportion = count / sum(count)) |>
+  ggplot(aes(x = Walc, y = Proportion, fill = famsup)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Weekday Alcohol Drinking",
+    x = "Frequency of Drinking scale from 1-5",
+    y = "% Family Support (Yes or not)"
+  ) 
+pointplot
+```
+
+As we can see from the graph, this is the graph for weekend alcohol drinking. The independent variable is the frequency of people drinking on a scale from 1-5 and the dependent variable is the proportion of family members that either support or don't support the student's education (binary). We can see that weekend drinking with a score of 2 or 3 yields the highest support from family while the rest is quite similar in proportion of support. The proportion of those who consume the most at a scale of 5 is quite even. 
+
+```{r}
+pointplot2 <- portugese |>
+  group_by(Dalc, famsup) |>
+  summarize(count = n()) |>
+  mutate(Proportion = count / sum(count)) |>
+  ggplot(aes(x = Dalc, y = Proportion, fill = famsup)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Weekday Alcohol Drinking",
+   x = "Frequency of Drinking scale from 1-5",
+    y = "% Family Support (Yes or not)"
+  ) 
+pointplot2
+```
+
+As we can see from the graph, this is the graph for weekday alcohol drinking. The independent variable is the frequency of people drinking on a scale from 1-5 and the dependent variable is the proportion of family members that either support or don't support the student's education (binary). We can see that for people who consume the most, the proportion of people who have more family suppport is higher than the proportion of those who don't family support which is quite odd.
 
 
+
+
+## Test
+```{r}
+regression1 <- lm(Dalc ~ famrel, data = portugese)
+
+regression1
+
+regression2 <- lm(Walc ~ famrel, data = portugese)
+regression2
+```
 
