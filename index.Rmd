@@ -211,7 +211,6 @@ As we can see from the graph, this is the graph for weekday alcohol drinking. Th
 
 
 
-
 ## Test
 ```{r}
 regression1 <- lm(Dalc ~ famrel, data = portugese)
