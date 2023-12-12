@@ -11,70 +11,71 @@ Link: https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
  
 Cortez,Paulo. (2014). Student Performance. UCI Machine Learning Repository. https://doi.org/10.24432/C5TG7T.
 
-##Additional Information
+## Additional Information
 
 This data approach student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographic, social and school related features) and it was collected by using school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), while G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details).
 
-# Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:
-1 school - student's school (binary: 'GP' - Gabriel Pereira or 'MS' - Mousinho da Silveira)
+# Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:Introduce My Data
 
-2 sex - student's sex (binary: 'F' - female or 'M' - male)
+1: `school` - student's school (binary: 'GP' - Gabriel Pereira or 'MS' - Mousinho da Silveira)
 
-3 age - student's age (numeric: from 15 to 22)
+2: `sex` - student's sex (binary: 'F' - female or 'M' - male)
 
-4 address - student's home address type (binary: 'U' - urban or 'R' - rural)
+3: `age` - student's age (numeric: from 15 to 22)
 
-5 famsize - family size (binary: 'LE3' - less or equal to 3 or 'GT3' - greater than 3)
+4: `address` - student's home address type (binary: 'U' - urban or 'R' - rural)
 
-6 Pstatus - parent's cohabitation status (binary: 'T' - living together or 'A' - apart)
+5: `famsize` - family size (binary: 'LE3' - less or equal to 3 or 'GT3' - greater than 3)
 
-7 Medu - mother's education (numeric: 0 - none,  1 - primary education (4th grade), 2 â€“ 5th to 9th grade, 3 â€“ secondary education or 4 â€“ higher education)
+6: `Pstatus` - parent's cohabitation status (binary: 'T' - living together or 'A' - apart)
 
-8 Fedu - father's education (numerice: 0 - none,  1 - primary education (4th grade), 2 â€“ 5th to 9th grade, 3 â€“ secondary education or 4 â€“ higher education)
+7: `Medu` - mother's education (numeric: 0 - none,  1 - primary education (4th grade), 2 â€“ 5th to 9th grade, 3 â€“ secondary education or 4 â€“ higher education)
 
-9 Mjob - mother's job (nominal: 'teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other')
+8: `Fedu` - father's education (numerice: 0 - none,  1 - primary education (4th grade), 2 â€“ 5th to 9th grade, 3 â€“ secondary education or 4 â€“ higher education)
 
-10 Fjob - father's job (nominal: 'teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other')
+9: `Mjob` - mother's job (nominal: 'teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other')
 
-11 reason - reason to choose this school (nominal: close to 'home', school 'reputation', 'course' preference or 'other')
+10: `Fjob` - father's job (nominal: 'teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other')
 
-12 guardian - student's guardian (nominal: 'mother', 'father' or 'other')
+11: `reason` - reason to choose this school (nominal: close to 'home', school 'reputation', 'course' preference or 'other')
 
-13 traveltime - home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
+12: `guardian` - student's guardian (nominal: 'mother', 'father' or 'other')
 
-14 studytime - weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)
+13: `traveltime` - home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
 
-15 failures - number of past class failures (numeric: n if 1<=n<3, else 4)
+14: `studytime` - weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)
 
-16 schoolsup - extra educational support (binary: yes or no)
+15: `failures` - number of past class failures (numeric: n if 1<=n<3, else 4)
 
-17 famsup - family educational support (binary: yes or no)
+16: `schoolsup` - extra educational support (binary: yes or no)
 
-18 paid - extra paid classes within the course subject (Math or Portuguese) (binary: yes or no)
+17: `famsup` - family educational support (binary: yes or no)
 
-19 activities - extra-curricular activities (binary: yes or no)
+18: `paid` - extra paid classes within the course subject (Math or Portuguese) (binary: yes or no)
 
-20 nursery - attended nursery school (binary: yes or no)
+19: `activities` - extra-curricular activities (binary: yes or no)
 
-21 higher - wants to take higher education (binary: yes or no)
+20: `nursery` - attended nursery school (binary: yes or no)
 
-22 internet - Internet access at home (binary: yes or no)
+21: `higher` - wants to take higher education (binary: yes or no)
 
-23 romantic - with a romantic relationship (binary: yes or no)
+22: `internet` - Internet access at home (binary: yes or no)
 
-24 famrel - quality of family relationships (numeric: from 1 - very bad to 5 - excellent)
+23: `romantic` - with a romantic relationship (binary: yes or no)
 
-25 freetime - free time after school (numeric: from 1 - very low to 5 - very high)
+24: `famrel` - quality of family relationships (numeric: from 1 - very bad to 5 - excellent)
 
-26 goout - going out with friends (numeric: from 1 - very low to 5 - very high)
+25: `freetime` - free time after school (numeric: from 1 - very low to 5 - very high)
 
-27 Dalc - workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
+26: `goout` - going out with friends (numeric: from 1 - very low to 5 - very high)
 
-28 Walc - weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
+27: `Dalc` - workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
 
-29 health - current health status (numeric: from 1 - very bad to 5 - very good)
+28: `Walc` - weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
 
-30 absences - number of school absences (numeric: from 0 to 93)
+29: `health` - current health status (numeric: from 1 - very bad to 5 - very good)
+
+30: `absences` - number of school absences (numeric: from 0 to 93)
 
 # these grades are related with the course subject, Math or Portuguese:
 31 G1 - first period grade (numeric: from 0 to 20)
@@ -83,21 +84,23 @@ This data approach student achievement in secondary education of two Portuguese 
 
 32 G3 - final grade (numeric: from 0 to 20, output target)
 
-## Project thoughts
+## Milestone One - Project thoughts
 
-I am interested in finding out the trend between a student's performance in school based on the amount of alcohol they consume. I also want to compare the alcohol consumption to whether it is also impacted by family support in education and the strength of the family relationships or not that causes the student to consume more or less alcohol. 
+I am interested in finding out the trend between a student's performance in school based on the amount of alcohol they consume. Or perhaps comparing the alcohol consumption to whether it is also impacted by family support in education and the strength of the family relationships or not that causes the student to consume more or less alcohol. This idea will later become more developed as one reads the document along the way.
 
-So, in this csv file, I will compare the alcohol consumption among student age groups in Portugal. My question however is what is the cause for sudents to consume more alcohol than the average Portugal kid and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0).
+## Milestone Two - Project Proposal
 
-I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued 
+So, in this dataset, I wilb be using the "portugese" dataset I will compare the alcohol consumption among two groups of students: family support or not family support. My question however is what is the cause for sudents to consume more alcohol than the average Portugal teen and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0 from `famsup`). I also want to include an additional explanatory variable with `famrel` to add more specification into my analysis and determine if in fact family support does play a role with alcohol consumption. 
 
-My explanatory variables is age of students based on age group as well as the consumption levels of alcohol per age group (age range 15-22 & alcohol consumption range 1-5, low to high). This will then allow us to see a pattern among groups of students with the treatment being whether a student has educational support or not. I will also want to incorporate the strength of the relationship with family to help reinforce the validity of the findings to test my hypothesis (range 1-5, poor to strong relationship).
+I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued. When a parent neglects a child, that child will reciprocate the same action and carry that as they grow up. For example, a rich parent that cares about their career over their child will cause that child to develop a negative relationship in which that child will be apathetic towards their parent and perhaps their goals. In other relationships where the parent is close with the child, the child will tend to do better in school because they know they have support if they fall out of line. Family support is needed for a child to do well in school and in life in general. 
 
-My responding variable would be the effect it has on the students consumption of alcohol during the weekday as well as during the weekends. It will be measured by taking the mean of the consumption of alcohol of all students from a certain age group to find out the level of consumption. I will then find the ATE to confirm how much different the treated group is to the controlled group through a cross sectional design.
+My explanatory variables is two groups of students based on "family support" or no "family support" as well as the consumption levels of alcohol per family group (binary "yes or no" & alcohol consumption range 1-5, low to high). This will then allow us to see a pattern among groups of students with the treatment being whether a student has educational support or not. I will also want to incorporate the strength of the relationship with family to help reinforce the validity of the findings to test my hypothesis (range 1-5, poor to strong relationship).
 
-An observed pattern to help support my hypothesis would be a higher alcohol consumption in the group that receives less educational support whereas the group that receives educational support consumes less alcohol. However, a pattern that would disprove my hypothesis would be an inverse effect of educational support where the treatment group consumes more alcohol than the control group. 
+My responding variable would be the alcohol consumption levels during the weekend using the `Walc` variable. So the effect it has on the students' consumption of alcohol during the weekends. It will be measured by taking the mean of the consumption of alcohol of all students from a certain age group to find out the level of consumption. I will then find the ATE to confirm how much different the treated group is to the controlled group through a cross sectional design (because we only have units from after the treatment). There might be a possible confounding.
 
-## Finalstone Project 3
+An observed pattern to help support my hypothesis would be a higher alcohol consumption in the group that receives less educational support whereas the group that receives educational support consumes less alcohol. However, a pattern that would disprove my hypothesis would be an inverse effect of educational support where the students with parent support consumes more alcohol than the group that the has no family support.
+
+## Load Dataset
 
 ```{r}
 library(tidyverse)
@@ -105,13 +108,9 @@ library(ggplot2)
 library(dplyr)
 
 portugese <- read_csv("data/student-por.csv")
-math <- read_csv("data/student-mat.csv")
-
-portugese
-math
 ```
 
-##Avg Alcohol Consumption based on Treatment of Family Support or not
+## Avg Alcohol Consumption based on Treatment of Family Support or not
 ```{r}
 avgalcohol <- portugese |> 
   group_by(famsup) |>
@@ -120,14 +119,13 @@ avgalcohol <- portugese |>
     Dalc_mean = mean(Dalc),
     Walc_mean = mean(Walc)
   )
-
 knitr::kable(avgalcohol, col.names = c("Family Relationship Strength",
                                        "Family Support",
                                        "Workday Alcohol Consumption",
                                        "Weekend Alcohol Consumption"
                                        ))
 ```
-We can start see a relationship from the above table displaying the average amount of alcohol consumption from a scale 1 - very low to 5 - very high in two categories: "yes" for family support and "no" for no family support. We can see that there is a slightly higher consumption of alcohol for both "workday" and "weekend" drinking when family is supportive of child's. For Workday alcohol consumption, there is a 0.03197 increase in consumption if a family is not supportive in education compared to supportive family and for Weekend alcohol consumption, there is a 0.173 increase in consumption. Clearly there is a relationship between having a supportive family and not having a supportive family, allowing one to see that having no support may lead to an increase in alcohol consumption. Although we cannot assume this is causal.
+We can start see a relationship from the above table displaying the average amount of alcohol consumption from a scale 1 - very low to 5 - very high in two categories: "yes" for family support and "no" for no family support. We can see that there is a slightly higher consumption of alcohol for both "workday" and "weekend" drinking when family is supportive of child's. For Workday alcohol consumption, there is a 0.03197 increase in consumption if a family is not supportive in education compared to supportive family and for Weekend alcohol consumption, there is a 0.173 increase in consumption. Clearly there is a relationship between having a supportive family and not having a supportive family, allowing one to see that having no support may lead to an increase in alcohol consumption. Although we cannot assume this is causal. 
 
 ## Simple Comparison of both Workday and Weekend Drinking 
 ```{r}
@@ -145,36 +143,11 @@ simpcomp <- famsupport - nofamsupport
 
 knitr::kable(simpcomp, col.names = c("SimpComp of Workday Drinking", "SimpComp of Weekend Drinking"))
 ```
-For this part, I did a quick Simple Comparison of the difference between the mean of the treatment minus the control. I already stated the difference up above but to further demonstrate the difference in groups, this is the concrete evidence.Again, a relationship can be seen that having no family support may lead to an individual to consume more alcohol.
+For this part, I did a quick Simple Comparison of the difference between the mean of the treatment minus the control. I already stated the difference up above but to further demonstrate the difference in groups, this is the concrete evidence. Again, a relationship can be seen that having no family support may lead to an individual to consume more alcohol where those who have a family are less likely to consume alcohol. 
 
+## Milestone 3 & 4 - Data Visualization
+### Plot 1: Main Outcome of Interest
 
-
-##ggplot
-
-
-```{r}
-boxplotweekend <- portugese |>
-  ggplot(mapping = aes(x = famsup, y = Walc)) +
-  geom_boxplot()
-boxplotweekend
-```
-
-```{r}
-boxplotweekend2 <- portugese |>
-  ggplot(mapping = aes(x = famsup, y = Dalc)) +
-  geom_boxplot()
-boxplotweekend2
-```
-
-## Test
-```{r}
-pointplot <- portugese |>
-  ggplot(mapping = aes(x = famrel, y = Walc, color = famsup, fill = famsup)) +
-  geom_point() +
-  geom_smooth()
-pointplot
-```
-## Finalstone Project 4
 ```{r}
 pointplot <- portugese |>
   group_by(Walc, famsup) |>
@@ -183,41 +156,60 @@ pointplot <- portugese |>
   ggplot(aes(x = Walc, y = Proportion, fill = famsup)) +
   geom_bar(stat = "identity") +
   labs(
-    title = "Weekday Alcohol Drinking",
-    x = "Frequency of Drinking scale from 1-5",
+    title = "Weekend Alcohol Drinking",
+    x = "Alcohol Consumption Level from 1-5",
     y = "% Family Support (Yes or not)"
   ) 
 pointplot
 ```
+This graph essentially captures all of the variables of interest that I am trying to explore in deep detail. The main outcome of interest is the level of alcohol consumption based on whether a teen has family support or not in education. On the x-axis is the alcohol consumption level from 1-5 and is put there to make it easier to read. On the y-axis is the percentage of family support that either receives support (yes) or not. It is color coded between both groups to make it easier to read.
 
-As we can see from the graph, this is the graph for weekend alcohol drinking. The independent variable is the frequency of people drinking on a scale from 1-5 and the dependent variable is the proportion of family members that either support or don't support the student's education (binary). We can see that weekend drinking with a score of 2 or 3 yields the highest support from family while the rest is quite similar in proportion of support. The proportion of those who consume the most at a scale of 5 is quite even. 
+There is a higher proportion of people who have family support in levels 1, 2, and 3 of alcohol consumption with each bar having a proportion of 60% of family support to roughly 40% of no family support. So it is around equal in the proportion of both both groups in terms of alcohol consumption with a slightly greater proportion of those with family support in each of these categories of alcohol consumption. We can see however that in level 4 of alcohol consumption there seems to be a slightly greater number of no support who consume more alcohol than those who receive support. In the level 5 alcohol consumption level, a strange thing occurs where it seems like the proportion of those who receive family support is slightly higher than those who didn't receive family support. So on average, it seems like the group that consumes more alcohol on average is the people with family support than those who don't receive family support. This is quite different than what we found in the previous simple comparison difference in means. It changes my hypothesis quite a lot for weekend drinking. 
+
+## Plot 2: Relationship between Dependent and Independent Variables
+```{r}
+pointplot <- portugese |>
+  ggplot(mapping = aes(x = famrel, y = Walc, color = famsup, fill = famsup)) +
+  geom_point() +
+  geom_smooth()
+pointplot
+```
+In this weekend drinking graph, the x-axis represents strength of family relationship vs the y-axis that represents the weekend alcohol consumption. We can see here the highest levels of alcohol consumption comes from level 2 and 3 of family relationship strength for those who "don't receive family support for education" at an alcohol consumption of around 3.3 compared to those who do actually receive support which is roughly around an alcohol consumption level of 2. Both groups at the highest level of family relationship of 5 (end of x-axis), it slightly slips off to level 2 alcohol consumption levels, but it does seem the highest level of alcohol consumption is at a point of 3.3 where family relationship level is 1-3 for those who don't receive family support. This again has a different finding that what we found at the main outcome of interest graph where it seems like those who have no family support consume higher levels of alcohol compared to those who have family support. Family relationship doesn't really play a role in terms of alcohol consumption levels, but family support does seem to play a slight role in determining if people consume more or less alcohol. We will now move on to the results and see whether our ambiguous findings are indeed fitting with my hypothesis or not. 
+
+# Results
 
 ```{r}
-pointplot2 <- portugese |>
-  group_by(Dalc, famsup) |>
-  summarize(count = n()) |>
-  mutate(Proportion = count / sum(count)) |>
-  ggplot(aes(x = Dalc, y = Proportion, fill = famsup)) +
-  geom_bar(stat = "identity") +
-  labs(
-    title = "Weekday Alcohol Drinking",
-   x = "Frequency of Drinking scale from 1-5",
-    y = "% Family Support (Yes or not)"
-  ) 
-pointplot2
+library(broom)
+regression3 <- lm(Walc ~ famrel + famsup + age + sex + famsize, data = portugese)
+summary(regression3)
+
+var_labels <- c(
+"(Intercept)" = "Intercept",
+"famrel" = "Family Relationship strength",
+"famsupyes" = "Family Support or not",
+"age" = "Age",
+"sexM" = "Sex (m or f)",
+"famsizeLE3" = "Family Size"
+)
+modelsummary::modelsummary(regression3,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           coef_rename = var_labels,
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
 ```
 
-As we can see from the graph, this is the graph for weekday alcohol drinking. The independent variable is the frequency of people drinking on a scale from 1-5 and the dependent variable is the proportion of family members that either support or don't support the student's education (binary). We can see that for people who consume the most, the proportion of people who have more family suppport is higher than the proportion of those who don't family support which is quite odd.
+The coefficient of interest of is the family support relative those who don't receive family support. The coefficient is -.024 meaning that those who receive family support are -.024 percentage points less likely to drink than those who don't receive family support. The p-value is more than .05 and therefore it is an insignificant negative value between family support and no family support. Therefore we fail to reject the null and state that family support doesn't really play a role in whether or not teens consume alcohol or not. This however doesn't mean that the current standard is in fact true but that we found insignificant evidence to point towards the fact the family support does decrease alcohol consumption. 
+
+Additionally another variable of interest is family relationship strength and we get a coefficient of -.160 with a p-value of .001. This means that reject the null because the coefficient is significant enough to refute the current parameter. This however doesn't mean that the current standard is false but that there is enough evidence to state that family relationship strength has a role in whether or not people consume alcohol.
+
+In this regression, we controlled for other variables like age, sex, and family size. This allowed for us to find a good regression that as a result of doing all of that, makes my hypothesis false. It is not family support that causes more or less alcohol consumption but family relationship strength that causes this change in alcohol consumption. It does seem that more alcohol consumption is a result of family support or not but it is not significant to refute the null hypothesis whereas family relationship strength is more determinant on that fact. We should however interpret this to be the case since there could be other factors that perhaps could have better explained why family relationship strength caused alcohol consumption. Anything here is not causal but because it could or could not be significant to the hypothesis at stake. 
+
+Additionally my other results, for the first graph which was main outcome of interest demonstrated that those who received more family support consumed more alcohol on average than those who don't have family support. This could have altered my hypothesis completely but this could be due to the fact that there is a higher sample size of people who have supportive families in the "portugese" dataset. Another thing that made the findings more ambiguous is the graph displaying the relationship between family relationship strength and the level of alcohol consumption throughout the weekend between the two groups: yes or no family support. There we found that those who have family support had less alcohol consumption than those who have no family support around the same family relationship levels. Relationship levels seemed like they didn't play a role but according to the regression, they play a greater role than family support. 
 
 
+## Conclusion
+I started a hypothesis that went like this: "I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued." As a result of my findings, we find that my hypothesis was not entirely correct and we find that family supoprt is not the sole determinant of alcohol consumption but that family relationship strength plays a greater role in whether or not a teen consumes alcohol or not. This was founded by the regression I did which found that family relationship strength is more significant because its p-value was less than .05 level. People with a stronger family relationship strength were -.160 percentage points less likely to consume alcohol than those who had a weaker family relationship. What was funny was that in the 2 graphs, I found an ambiguous finding that family support is very nuanced when it came to alcohol consumption levels because on our main outcome of interest, family support meant that teens drank more whereas in the dotted plot, it was the opposite. 
 
-## Test
-```{r}
-regression1 <- lm(Dalc ~ famrel, data = portugese)
+The limitation of this experiment is quite a few things. Firstly, the sample size was not large enough as well as most teens having a supportive backbone in their education. It seems like family support did not play a role in alcohol consumption and could explain why our findings were the way they were. Portugal could also have affected my findings since the age restriction for alcohol is 18 which is less than in the US. A confounding variable could have been the variable `goout` which is the level of going out of friends on a scale from 1 - 5. The more that a person goes out with friends, the more likely they will be influenced negatively perhaps or inversely. Parent's education could also be a confounding variable which affects the relationship strength, family support, and the alcohol consumption of a teen. If a parent is more educated, they are more likely to be supportive of their child's education and perhaps be a little bit strict with alcohol consumption. Thus students could be more or less rebellious depending on how the child reacts to their parent's treatment. I do however wish that I could have had a higher sample size to have a better idea of whether or not family support had an effect on alcohol consumption. Perhaps a more equalized dataset with an equal amount of no or yes family support would have been better, but since it is a natural experiment, it is very limited. 
 
-regression1
-
-regression2 <- lm(Walc ~ famrel, data = portugese)
-regression2
-```
-
+If I could improve this, I would survey even more people, perhaps include more schools in the dataset, include more students, and perhaps equalize the amount of people who have or no family support. I want to make sure it is randomized close to perfect. This dataset was however biased since it took the data of students from a specific school which is biased and not representative of the entire population of teens in Portugal. Perhaps in another time, if I am bored I could go to Portugal and do more research. More people in dataset makes the dataset more accurate. 
