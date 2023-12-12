@@ -13,7 +13,7 @@ Cortez,Paulo. (2014). Student Performance. UCI Machine Learning Repository. http
 
 ## Additional Information
 
-This data approach student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographic, social and school related features) and it was collected by using school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), while G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details).
+This data approach student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographic, social and school related features and it was collected by using school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), while G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details).
 
 # Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:Introduce My Data
 
@@ -84,21 +84,23 @@ This data approach student achievement in secondary education of two Portuguese 
 
 32 G3 - final grade (numeric: from 0 to 20, output target)
 
-## Milestone One - Project thoughts
+## Project thoughts
 
 I am interested in finding out the trend between a student's performance in school based on the amount of alcohol they consume. Or perhaps comparing the alcohol consumption to whether it is also impacted by family support in education and the strength of the family relationships or not that causes the student to consume more or less alcohol. This idea will later become more developed as one reads the document along the way.
 
-## Milestone Two - Project Proposal
+## Project Plan and Hypothesis
 
-So, in this dataset, I wilb be using the "portugese" dataset I will compare the alcohol consumption among two groups of students: family support or not family support. My question however is what is the cause for sudents to consume more alcohol than the average Portugal teen and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0 from `famsup`). I also want to include an additional explanatory variable with `famrel` to add more specification into my analysis and determine if in fact family support does play a role with alcohol consumption. 
-
+So, in this data set, I will be using the "portugese" dataset where I will compare the alcohol consumption among two groups of students: family support or not family support. My question however is what is the cause for sudents to consume more alcohol than the average Portugal teen and is it caused by familial problems? To do this, the treatment will be whether a student has educational support or not (binary, 1 or 0 from `famsup`). I also want to include an additional explanatory variable with `famrel` to add more specification into my analysis and determine if in fact family support does play a role with alcohol consumption. 
 I hypothesize that if a parent neglects family support in education as well as have a terrible relationship, therefore it will cause the student to carelessly drink because education is not valued. When a parent neglects a child, that child will reciprocate the same action and carry that as they grow up. For example, a rich parent that cares about their career over their child will cause that child to develop a negative relationship in which that child will be apathetic towards their parent and perhaps their goals. In other relationships where the parent is close with the child, the child will tend to do better in school because they know they have support if they fall out of line. Family support is needed for a child to do well in school and in life in general. 
+The reason that this is important is because I want to explore whether family has an impact on whether or not the child will consume more or less alcohol. Family influences how a child will act and depending on how they were raised, this could affect the choices that children make as they keep growing up. Perhaps if a child has been neglected, they would tend to consume more alcohol and I want to explore this specifically in Portugal. I know my findings will be different than what researchers have found in the US since Portugal is less strict on alcohol. 
 
 My explanatory variables is two groups of students based on "family support" or no "family support" as well as the consumption levels of alcohol per family group (binary "yes or no" & alcohol consumption range 1-5, low to high). This will then allow us to see a pattern among groups of students with the treatment being whether a student has educational support or not. I will also want to incorporate the strength of the relationship with family to help reinforce the validity of the findings to test my hypothesis (range 1-5, poor to strong relationship).
-
 My responding variable would be the alcohol consumption levels during the weekend using the `Walc` variable. So the effect it has on the students' consumption of alcohol during the weekends. It will be measured by taking the mean of the consumption of alcohol of all students from a certain age group to find out the level of consumption. I will then find the ATE to confirm how much different the treated group is to the controlled group through a cross sectional design (because we only have units from after the treatment). There might be a possible confounding.
-
 An observed pattern to help support my hypothesis would be a higher alcohol consumption in the group that receives less educational support whereas the group that receives educational support consumes less alcohol. However, a pattern that would disprove my hypothesis would be an inverse effect of educational support where the students with parent support consumes more alcohol than the group that the has no family support.
+
+### How the data was gathered
+
+The way the researchers conducted this experiment was taking the survey of students at a specific high school in Portugal and taking a sample size of 649 students. All of these students' ages range from 15 - 22 taking into account their age, family size, relationships, alcohol consumption, etc.The main purpose was to look at how alcohol affected student's grades, but with additional variables like "family support" and "family relationship strength" one can find if there is a relationship between alcohol consumption and family support. Family support is measured through a binary "yes" and "no" while family relationship strength is measured using a scale from 1 being a weak relationship to 5 being a strong relationship. Additionally, the responding variable is weekend drinking also from a 1 - 5 scale where 1 is low alcohol consumption and 5 is a high alcohol consumption.
 
 ## Load Dataset
 
@@ -145,7 +147,7 @@ knitr::kable(simpcomp, col.names = c("SimpComp of Workday Drinking", "SimpComp o
 ```
 For this part, I did a quick Simple Comparison of the difference between the mean of the treatment minus the control. I already stated the difference up above but to further demonstrate the difference in groups, this is the concrete evidence. Again, a relationship can be seen that having no family support may lead to an individual to consume more alcohol where those who have a family are less likely to consume alcohol. 
 
-## Milestone 3 & 4 - Data Visualization
+## Data Visualization
 ### Plot 1: Main Outcome of Interest
 
 ```{r}
@@ -158,8 +160,9 @@ pointplot <- portugese |>
   labs(
     title = "Weekend Alcohol Drinking",
     x = "Alcohol Consumption Level from 1-5",
-    y = "% Family Support (Yes or not)"
-  ) 
+    y = "% Family Support (Yes or not)",
+  ) +
+  guides(fill = guide_legend(title = "Family support"))
 pointplot
 ```
 This graph essentially captures all of the variables of interest that I am trying to explore in deep detail. The main outcome of interest is the level of alcohol consumption based on whether a teen has family support or not in education. On the x-axis is the alcohol consumption level from 1-5 and is put there to make it easier to read. On the y-axis is the percentage of family support that either receives support (yes) or not. It is color coded between both groups to make it easier to read.
@@ -171,12 +174,18 @@ There is a higher proportion of people who have family support in levels 1, 2, a
 pointplot <- portugese |>
   ggplot(mapping = aes(x = famrel, y = Walc, color = famsup, fill = famsup)) +
   geom_point() +
-  geom_smooth()
+  geom_smooth() +
+  labs(
+    title = "Weekend Alcohol Drinking",
+    x = "Family Relationship Strength from 1-5",
+    y = "Alcohol Consumption Level from 1-5",
+  ) +
+  guides(fill = guide_legend(title = "Family Support"))
 pointplot
 ```
 In this weekend drinking graph, the x-axis represents strength of family relationship vs the y-axis that represents the weekend alcohol consumption. We can see here the highest levels of alcohol consumption comes from level 2 and 3 of family relationship strength for those who "don't receive family support for education" at an alcohol consumption of around 3.3 compared to those who do actually receive support which is roughly around an alcohol consumption level of 2. Both groups at the highest level of family relationship of 5 (end of x-axis), it slightly slips off to level 2 alcohol consumption levels, but it does seem the highest level of alcohol consumption is at a point of 3.3 where family relationship level is 1-3 for those who don't receive family support. This again has a different finding that what we found at the main outcome of interest graph where it seems like those who have no family support consume higher levels of alcohol compared to those who have family support. Family relationship doesn't really play a role in terms of alcohol consumption levels, but family support does seem to play a slight role in determining if people consume more or less alcohol. We will now move on to the results and see whether our ambiguous findings are indeed fitting with my hypothesis or not. 
 
-# Results
+# Regression of Interest
 
 ```{r}
 library(broom)
@@ -198,13 +207,11 @@ modelsummary::modelsummary(regression3,
                            gof_map = c("nobs", "r.squared", "adj.r.squared"))
 ```
 
-The coefficient of interest of is the family support relative those who don't receive family support. The coefficient is -.024 meaning that those who receive family support are -.024 percentage points less likely to drink than those who don't receive family support. The p-value is more than .05 and therefore it is an insignificant negative value between family support and no family support. Therefore we fail to reject the null and state that family support doesn't really play a role in whether or not teens consume alcohol or not. This however doesn't mean that the current standard is in fact true but that we found insignificant evidence to point towards the fact the family support does decrease alcohol consumption. 
+The coefficient of interest of is the family support relative those who don't receive family support. The coefficient is -.024 meaning that those who receive family support are -.024 lower alcohol consumption to drink than those who don't receive family support. The p-value is more than .05 and therefore it is an insignificant negative value between family support and no family support. Therefore we fail to reject the null and state that family support doesn't really play a role in whether or not teens consume alcohol or not. This however doesn't mean that the current standard is in fact true but that we found insignificant evidence to point towards the fact the family support does decrease alcohol consumption. 
+Additionally another variable of interest is family relationship strength and we get a coefficient of -.160 with a p-value of .001. This means that we reject the null because the coefficient is significant enough to refute the current parameter of the .05 level. This however doesn't mean that the current standard is false but that there is enough evidence to state that family relationship strength has a role in whether or not people consume alcohol.
+In this regression, we controlled for other variables like age, sex, and family size. This allowed for us to find a good regression that as a result of doing all of that, makes my hypothesis somewhat false. It is not family support that causes more or less alcohol consumption but family relationship strength that causes this change in alcohol consumption. It does seem that more alcohol consumption is a result of family support or not but it is not significant to refute the null hypothesis whereas family relationship strength is more determinant on that fact. We should not however interpret this to be the case since there could be other factors that perhaps could have better explained why family relationship strength caused alcohol consumption. Anything here is not causal but helps paint a picture as to what causes alcohol consumption or not. 
 
-Additionally another variable of interest is family relationship strength and we get a coefficient of -.160 with a p-value of .001. This means that reject the null because the coefficient is significant enough to refute the current parameter. This however doesn't mean that the current standard is false but that there is enough evidence to state that family relationship strength has a role in whether or not people consume alcohol.
-
-In this regression, we controlled for other variables like age, sex, and family size. This allowed for us to find a good regression that as a result of doing all of that, makes my hypothesis false. It is not family support that causes more or less alcohol consumption but family relationship strength that causes this change in alcohol consumption. It does seem that more alcohol consumption is a result of family support or not but it is not significant to refute the null hypothesis whereas family relationship strength is more determinant on that fact. We should however interpret this to be the case since there could be other factors that perhaps could have better explained why family relationship strength caused alcohol consumption. Anything here is not causal but because it could or could not be significant to the hypothesis at stake. 
-
-Additionally my other results, for the first graph which was main outcome of interest demonstrated that those who received more family support consumed more alcohol on average than those who don't have family support. This could have altered my hypothesis completely but this could be due to the fact that there is a higher sample size of people who have supportive families in the "portugese" dataset. Another thing that made the findings more ambiguous is the graph displaying the relationship between family relationship strength and the level of alcohol consumption throughout the weekend between the two groups: yes or no family support. There we found that those who have family support had less alcohol consumption than those who have no family support around the same family relationship levels. Relationship levels seemed like they didn't play a role but according to the regression, they play a greater role than family support. 
+Additionally my other results, for the first bar graph which was main outcome of interest demonstrated that those who received more family support consumed more alcohol on average than those who don't have family support. This could have altered my hypothesis completely but this could be due to the fact that there is a higher sample size of people who have supportive families in the "portugese" dataset. Another thing that made the findings more ambiguous is the scatter plot graph displaying the relationship between family relationship strength and the level of alcohol consumption throughout the weekend between the two groups: yes or no family support. There we found that those who have family support had less alcohol consumption than those who have no family support around the same family relationship levels. Additionally, I did a simple "diff in means" where I also found that having family support means that teens are less likely to drink alcohol compared to those who had no family support. I found that weekend alcohol consumption had a 0.173 increase in consumption for those who don't have family support. Thankfully, I found that the regression actually states that family support is ambigious and that what really matters if the strength of the family relationship. The regression helped clear up any ambiguity found from the graphs.  
 
 
 ## Conclusion
